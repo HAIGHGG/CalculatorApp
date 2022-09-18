@@ -1,0 +1,212 @@
+@import url(./themes.css);
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--main-background);
+  font-family: "League Spartan", sans-serif;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 25px;
+  color: var(--logo-text-color);
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.header__logo {
+  font-size: 25px;
+}
+.header__theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.header .tri-state-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  padding: 4px;
+  margin-left: 10px;
+  background-color: var(--keypad-background);
+  border-radius: 50px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.header .tri-state-toggle input {
+  height: 15px;
+  width: 15px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: var(--equal-key-background);
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.header .tri-state-toggle input:hover {
+  cursor: pointer;
+}
+.header .tri-state-toggle input:active {
+  background-color: var(--equal-key-background-active);
+}
+.header .tri-state-toggle .button-one {
+  opacity: 1;
+}
+.header .tri-state-toggle::after {
+  content: "1 2 3";
+  position: absolute;
+  top: -15px;
+  left: 6px;
+  letter-spacing: 3px;
+}
+
+.display {
+  margin-bottom: 25px;
+  height: 85px;
+  width: 100%;
+  max-width: 340px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: var(--screen-background);
+  color: var(--display-text-color);
+  text-align: right;
+  font-size: 32px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  padding: 15px;
+  background-color: var(--keypad-background);
+  border-radius: 10px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.panel button {
+  margin: 5px;
+  min-height: 65px;
+  min-width: 60px;
+  border: none;
+  border-radius: 8px;
+  color: var(--main-text);
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  background-color: var(--key-background);
+  -webkit-box-shadow: 0px 5px 0px 0px var(--key-shadow);
+          box-shadow: 0px 5px 0px 0px var(--key-shadow);
+  font-size: 32px;
+  font-family: "League Spartan", sans-serif;
+  padding-top: 10px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.panel button:active {
+  background-color: var(--key-background-active);
+}
+.panel button:nth-of-type(4),
+.panel button:nth-of-type(17) {
+  color: var(--second-text);
+  background-color: var(--text-key-background);
+  -webkit-box-shadow: 0px 5px 0px 0px var(--text-key-shadow);
+          box-shadow: 0px 5px 0px 0px var(--text-key-shadow);
+  font-size: 24px;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.panel button:nth-of-type(4):active,
+.panel button:nth-of-type(17):active {
+  background-color: var(--text-key-background-active);
+}
+.panel button:nth-of-type(17) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.panel button:nth-of-type(18) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  color: var(--equal-key-text);
+  background-color: var(--equal-key-background);
+  -webkit-box-shadow: 0px 5px 0px 0px var(--equal-key-shadow);
+          box-shadow: 0px 5px 0px 0px var(--equal-key-shadow);
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.panel button:nth-of-type(18):active {
+  background-color: var(--equal-key-background-active);
+}/*# sourceMappingURL=style.css.map */

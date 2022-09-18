@@ -1,0 +1,167 @@
+@import url(./themes.css);
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: var(--main-background);
+	font-family: 'League Spartan', sans-serif;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.2s;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 25px;
+	color: var(--logo-text-color);
+	transition: color 0.2s;
+
+	&__logo {
+		font-size: 25px;
+	}
+	&__theme {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.tri-state-toggle {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		padding: 4px;
+		margin-left: 10px;
+		background-color: var(--keypad-background);
+		border-radius: 50px;
+		transition: background-color 0.2s;
+
+		input {
+			height: 15px;
+			width: 15px;
+			appearance: none;
+			background-color: var(--equal-key-background);
+			border-radius: 50%;
+			opacity: 0;
+			transition: background-color 0.2s;
+
+			&:hover {
+				cursor: pointer;
+			}
+			&:active {
+				background-color: var(--equal-key-background-active);
+			}
+		}
+
+		.button-one {
+			opacity: 1;
+		}
+
+		&::after {
+			content: '1 2 3';
+			position: absolute;
+			top: -15px;
+			left: 6px;
+			letter-spacing: 3px;
+		}
+	}
+}
+
+.display {
+	margin-bottom: 25px;
+	height: 85px;
+	width: 100%;
+	max-width: 340px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background-color: var(--screen-background);
+	color: var(--display-text-color);
+	text-align: right;
+	font-size: 32px;
+	padding: 30px 20px;
+	border-radius: 10px;
+	transition: color 0.2s;
+	transition: background-color 0.2s;
+}
+
+.panel {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 10px;
+	padding: 15px;
+	background-color: var(--keypad-background);
+	border-radius: 10px;
+	transition: background-color 0.2s;
+
+	button {
+		margin: 5px;
+		min-height: 65px;
+		min-width: 60px;
+		border: none;
+		border-radius: 8px;
+		color: var(--main-text);
+		transition: color 0.2s;
+		background-color: var(--key-background);
+		box-shadow: 0px 5px 0px 0px var(--key-shadow);
+		font-size: 32px;
+		font-family: 'League Spartan', sans-serif;
+		padding-top: 10px;
+		transition: background-color 0.2s;
+
+		&:active {
+			background-color: var(--key-background-active);
+		}
+	}
+	button:nth-of-type(4),
+	button:nth-of-type(17) {
+		color: var(--second-text);
+		background-color: var(--text-key-background);
+		box-shadow: 0px 5px 0px 0px var(--text-key-shadow);
+		font-size: 24px;
+		transition: color 0.2s;
+		transition: background-color 0.2s;
+
+		&:active {
+			background-color: var(--text-key-background-active);
+		}
+	}
+
+	button:nth-of-type(17) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	button:nth-of-type(18) {
+		grid-column-start: 3;
+		grid-column-end: 5;
+		color: var(--equal-key-text);
+		background-color: var(--equal-key-background);
+		box-shadow: 0px 5px 0px 0px var(--equal-key-shadow);
+		transition: color 0.2s;
+		transition: background-color 0.2s;
+
+		&:active {
+			background-color: var(--equal-key-background-active);
+		}
+	}
+}
