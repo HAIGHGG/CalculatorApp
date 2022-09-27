@@ -39,7 +39,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .header {
@@ -209,4 +209,16 @@ body {
 }
 .panel button:nth-of-type(18):active {
   background-color: var(--equal-key-background-active);
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 530px;
+  }
+  .wrapper .display {
+    max-width: 100%;
+  }
+  .wrapper .panel {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
