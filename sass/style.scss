@@ -23,7 +23,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 20px;
+	padding: 15px;
 }
 
 .header {
@@ -165,3 +165,17 @@ body {
 		}
 	}
 }
+
+@media screen and (min-width: 768px) {
+	.wrapper {
+		width: 530px;
+		.display {
+			max-width: 100%;
+		}
+
+		.panel {
+			width: 100%;
+		}
+	}
+}
+
