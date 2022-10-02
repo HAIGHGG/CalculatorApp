@@ -2,7 +2,7 @@
 
 This is a solution to the [Calculator app](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
-## [Solution](https://HAIGHGG.github.io/CalculatorApp)
+## [Demo](https://HAIGHGG.github.io/CalculatorApp)
 
 ### Built with
 
