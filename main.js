@@ -28,13 +28,15 @@ const deleteLastNumber = () => {
 }
 
 const showResult = () => {
-	try {
-		display.textContent = eval(display.textContent)
-	} catch (err) {
-		if (err != '') {
-			display.textContent = 'ERROR'
-		}
-	}
+        if (display.textContent === '') return
+        try {
+                const result = eval(display.textContent)
+                if (result !== undefined) {
+                        display.textContent = result
+                }
+        } catch (err) {
+                display.textContent = 'ERROR'
+        }
 }
 
 // THEME SELECTOR
